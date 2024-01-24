@@ -26,7 +26,6 @@ def janken_game
     puts "あなた：#{jankens[player]}を出しました"
     puts "相手：#{jankens[cpu]}を出しました"    
     return @janken_resultA = 1 #じゃんけん勝利パターンの戻り値を保存
-    atchi_game
     puts line
 
   elsif (player == 1) && (cpu == 0)|| #負けの場合
@@ -35,11 +34,11 @@ def janken_game
     puts "あなた：#{jankens[player]}を出しました"
     puts "相手：#{jankens[cpu]}を出しました"
     return @janken_resultB = 2  #じゃんけん敗北パターンの戻り値を保存
-    atchi_game    
     puts line 
 
   else #4〜9の数値を入力した場合
     puts "0~3の数字を入力してください"  
+    janken_game
   end
 end
 
@@ -70,7 +69,6 @@ def atchi_game
   else
     puts "あなた：#{directions[player]}"
     puts "相手：#{directions[cpu]}"    
-    janken_game #再度じゃんけん
   end
 end
 
